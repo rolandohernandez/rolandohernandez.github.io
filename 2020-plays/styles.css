@@ -1,3 +1,4 @@
+
 body {
   text-align: center;
   background-color: #001937;
@@ -10,8 +11,8 @@ body {
 }
 
 h1 {
-  font-size: 80px;
-  margin-top: 55px;
+  font-size: 90px;
+  margin-top: 50px;
   margin-bottom: 30px;
   padding: 0 15px;
 }
