@@ -119,8 +119,3 @@ nav ul li + li::before {
 .post img {
   border: 3px solid #768abe;
 }
-
-.post ul,
-.post ul {
-  line-height: 24px;
-}
