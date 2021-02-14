@@ -12,6 +12,7 @@ body {
 
 h2 {
   font-size: 90px;
+  text-transform: capitalize;
   margin-top: 50px;
   margin-bottom: 30px;
   padding: 0 15px;
@@ -30,6 +31,7 @@ p {
   padding: 0 15px;
   line-height: 26px;
   max-width: 650px;
+  font-style: italic;
 }
 
 figure {
