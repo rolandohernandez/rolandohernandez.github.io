@@ -13,37 +13,97 @@
 </head>
 
 <body>
-    <h2>2020</h2>
-    <p><em>"I've spent more time in the skies, than on the ground." — Suikoden II</em></p>
+    <script type="text/javascript">
+        var awesomeList = function () {
+            var config = {
+                data: [
+                    {
+                        'folder': '2020',
+                        'description': 'Walther',
+                    },
+                    {
+                        'folder': '2021',
+                        'description': 'Andrés',
+                    },
+                    {
+                        'folder': 'backlog',
+                        'description': 'Rules',
+                    }
+                ],
+                imgUrl: 'covers/{{folder}}/img-{{imgIndex}}.jpg'
+            };
 
-    <ul class="collection">
-        <li class="game">
-            <figure class="game-art">
-                <img src="images/jedi-fallen-order.jpg">
-            </figure>
-        </li>
-    </ul>
+            var folderIndex = 0, imgIndex = 1;
 
-    <h2>2021</h2>
-    <p><em>"I tesselate and animate these dancing sprites and sunlit skies for you". — Astro's Playroom</em></p>
+            var util = {
+                interpolateString: function (str, obj, callback) {
+                    var marker = /{{([a-z][a-z0-9\-_]*)}}/gi;
+                    return str.replace(marker, function (matches) {
+                        return callback(obj, arguments[1]) || '';
+                    });
+                },
+                callback: function (obj, name) {
+                    return name && 'undefined' !== typeof obj[name] ? obj[name] : '';
+                },
+                appendMarkUp: function (elements, parent) {
+                    parent = parent || document.body;
+                    for (var i = 0; i < elements.length; i++) {
+                        var el = elements[i];
+                        if (typeof el == "string")
+                            parent.innerHTML += el;
+                        else
+                            parent.appendChild(el);
+                    }
+                }
+            }
 
-    <ul class="collection">
-        <li class="game">
-            <figure class="game-art">
-                <img src="images/spiderman-miles-morales.jpg">
-            </figure>
-        </li>
-    </ul>
+            function createSection(section) {
+                var h2 = document.createElement('h2'),
+                    p = document.createElement('p'),
+                    ul = document.createElement('ul');
 
-    <h2>Backlog</h2>
+                h2.innerText = section.folder;
+                p.innerText = section.description;
+                ul.classList.add('collection', 'collection-' + section.folder);
+                util.appendMarkUp([h2, p, ul]);
 
-    <ul class="collection">
-        <li class="game backlog">
-            <figure class="game-art">
-                <img src="images/demons-souls.jpg">
-            </figure>
-        </li>
-    </ul>
+                nextImg(section.folder);
+            }
+
+            function createImg(imgSrc, folder) {
+                var img = document.createElement('img'),
+                    parent = document.querySelector('ul.collection-' + folder);
+                img.src = URL.createObjectURL(imgSrc);
+                util.appendMarkUp([`<li class="game"><figure class="game-art">${img.outerHTML}</figure></li>`], parent);
+            }
+
+            function nextImg(folder) {
+                fetch(util.interpolateString(config.imgUrl, { folder, imgIndex }, util.callback))
+                    .then(response => {
+                        if (!response.ok) throw new Error();
+                        return response.blob();
+                    })
+                    .then(imgSrc => {
+                        imgIndex++;
+                        createImg(imgSrc, folder);
+                        nextImg(folder);
+                    }).catch(function () {
+                        imgIndex = 1;
+                        folderIndex++;
+
+                        if (typeof config.data[folderIndex] != "undefined") createSection(config.data[folderIndex]);
+                    });
+            }
+
+            var init = function () {
+                createSection(config.data[folderIndex]);
+            }
+
+            init();
+        };
+
+        awesomeList();
+    </script>
 </body>
 
 </html>

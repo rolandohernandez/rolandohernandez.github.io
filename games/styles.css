@@ -59,6 +59,10 @@ img {
   }
 }
 
+.collection-backlog .game {
+  filter: grayscale();
+}
+
 .game {
   position: relative;
   counter-increment: inst;
@@ -69,9 +73,6 @@ img {
   margin: 3.7% 3.7% 0 3.7%;
 }
 
-.game.backlog {
-  filter: grayscale();
-}
 
 .game-art img {
   transition: all ease-in-out 300ms;
