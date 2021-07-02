@@ -1,0 +1,335 @@
+@font-face {
+	font-family: 'insolentregular';
+	src: url('fonts/insolent-webfont.woff2') format('woff2'), url('fonts/insolent-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'PT Sans Narrow', Georgia, serif;
+	font-size: 19px;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#index {
+	color: white;
+	background: url('images/manosarriba.png') top center no-repeat, url('images/manodelado.png') left 290px no-repeat #242c3e;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+@media (max-width: 650px) {
+  #index {
+    background: url('images/manosarriba.png') top center no-repeat #242c3e;
+  }
+}
+
+.site-cover {
+  padding: 0 35px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 120px;
+  font-family: 'insolentregular', Georgia, serif;
+  text-transform: uppercase;
+  margin: 0;
+  color: #FFE424;
+}
+
+
+@media (max-width: 650px) {
+  header h1 {
+    font-size: 50px;
+  }
+}
+
+header .lead {
+    font-weight: bold;
+    color: #79A3D8;
+    margin: 0 auto;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+  .characters h2 {
+    font-size: 40px;
+    font-family: 'insolentregular', Georgia, serif;
+    margin: 0;
+    color: #FFE424;
+  }
+
+@media (max-width: 650px) {
+  .characters h2 {
+    font-size: 22px;
+  }
+}
+
+.characters .col-1 {
+  margin-right: 5rem;
+}
+
+@media (max-width: 650px) {
+  .characters .col-1 {
+    font-size: 16px;
+  }
+}
+
+.characters ul {
+    margin-top: 0;
+    list-style: none;
+    font-weight: normal;
+    padding: 0;
+    line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+  .characters ul {
+    margin-right: 1rem;
+  }
+}
+
+.characters ul a {
+  position: relative;
+}
+
+.characters ul a::before {
+  content: url('images/selector.svg');
+  position: absolute;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.characters ul a:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 650px) {
+  .characters ul a:hover::before {
+    opacity: 0;
+  }
+}
+
+.characters li.disabled {
+	pointer-events: none;
+    color: #79A3D8;
+    font-style: italic;
+}
+
+footer {
+	text-align: center;
+}
+
+@media (max-width: 650px) {
+  footer {
+    font-size: 16px;
+  }
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+}
+
+footer a:hover {
+	 color: #FFE424;
+	 border-bottom: 1px dotted #FFE424;	
+}
+
+/* Stories */
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	text-transform: uppercase;
+	background-color:#192031;
+	color: white;
+	padding: 25px;
+}
+
+.nav-bar .back-btn:hover .btn {
+	color: white;
+}
+
+@media (max-width: 650px) {
+	.nav-bar .text {
+		display: none;
+	}
+}
+
+.nav-bar .back {
+	position: relative;
+    color: #79A3D8;
+    padding-right: 1rem;
+    font-size: 2rem;
+	top: 2px;
+}
+
+.nav-bar {
+    float: right;
+    padding-right: 25px;
+    text-align: right;	
+}
+
+.nav-bar h1 {
+	margin: 0;
+	font-family: 'insolentregular', Georgia, serif;
+	font-size: 35px;
+	color: #FFE424;	
+}
+
+@media (max-width: 650px) {
+	.nav-bar h1 {
+		font-size: 20px;
+	}
+}
+
+.nav-bar .byline {
+    margin: 0;
+    color: #79A3D8;	
+}
+
+@media (max-width: 650px) {
+	.nav-bar h1 {
+		font-size: 14px;
+	}
+}
+
+#story {
+  background: url('images/paper.gif')#232B3A;
+  padding-top: 180px;	
+}
+
+@media (max-width: 650px) {
+	#story {
+    	padding-top: 140px;
+	}
+}
+
+#story .story {
+	font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
+}
+
+#story .story h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    line-height: 2;	
+}
+
+@media (max-width: 650px) {
+	#story .story h2 {
+    	font-size: 1.5em;
+	}
+}
+
+#story .story p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-indent: 3em;
+}
+
+@media (max-width: 650px) {
+	#story .story p {
+    	font-size: 16px;
+	}
+}
+
+#story .story p:nth-child(2) {
+	text-indent: 0;
+}
+
+/* Animate CSS (https://daneden.github.io/animate.css) */
+
+.animated {
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+	  opacity: 0
+  }
+  to {
+	  opacity: 1
+	}
+}
+
+@keyframes fadeIn {
+  from {
+	  opacity: 0
+  }
+  to {
+	  opacity: 1
+	}
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
