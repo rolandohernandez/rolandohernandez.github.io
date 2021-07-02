@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'insolentregular';
-	src: url('fonts/insolent-webfont.woff2') format('woff2'), url('fonts/insolent-webfont.woff') format('woff');
+	src: url('../../assets/fonts/insolent-webfont.woff2') format('woff2'), url('../../assets/fonts/insolent-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -26,7 +26,7 @@ a {
 
 #index {
 	color: white;
-	background: url('images/manosarriba.png') top center no-repeat, url('images/manodelado.png') left 290px no-repeat #242c3e;
+	background: url('../../assets/images/hands-top.png') top center no-repeat, url('../../assets/images/hands-left.png') left 290px no-repeat #242c3e;
 	display: flex;
 	align-items: center;
 	justify-content: center;
