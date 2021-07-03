@@ -1,5 +1,6 @@
 (function () {
     $('.menu-item').on('click', function () {
+        console.log('hi');
         $('.menu-item').removeClass('is-active');
         $(this).addClass('is-active');
         $('.collection').removeClass('is-active');
@@ -17,7 +18,7 @@
                 player.src = '../assets/audios/' + dataAudio;
             }
 
-            var activeEl = document.querySelector('.is-active');
+            var activeEl = document.querySelector('.game.is-active');
             if (activeEl) activeEl.classList.remove('is-active');
 
             if (player.paused) {
