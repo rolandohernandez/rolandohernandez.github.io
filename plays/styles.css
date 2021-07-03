@@ -80,11 +80,17 @@ img {
   margin: 0 auto;
   opacity: 0;
   transition: opacity 500ms ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .collection.is-active {
   height: auto;
   opacity: 1;
+  overflow: visible;
+  visibility: visible;
+  pointer-events: visible;
 }
 .collection#backlog .game-info {
   display: none;
