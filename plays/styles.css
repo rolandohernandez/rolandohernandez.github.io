@@ -71,18 +71,24 @@ img {
 }
 
 .collection {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 0;
   max-width: 1000px;
   padding: 0;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
 .collection.is-active {
-  display: flex;
+  height: auto;
+  opacity: 1;
 }
-
+.collection#backlog .game-info {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .collection {
