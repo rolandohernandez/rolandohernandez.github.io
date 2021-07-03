@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'insolentregular';
-	src: url('../../assets/fonts/insolent-webfont.woff2') format('woff2'), url('../../assets/fonts/insolent-webfont.woff') format('woff');
+	src: url('../fonts/insolent-webfont.woff2') format('woff2'), url('../fonts/insolent-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -26,7 +26,7 @@ a {
 
 #index {
 	color: white;
-	background: url('../../assets/images/hands-top.png') top center no-repeat, url('../../assets/images/hands-left.png') left 290px no-repeat #242c3e;
+	background: url('images/hands-top.png') top center no-repeat, url('images/hands-left.png') left 290px no-repeat #242c3e;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -35,7 +35,7 @@ a {
 
 @media (max-width: 650px) {
   #index {
-    background: url('images/manosarriba.png') top center no-repeat #242c3e;
+    background: url('images/hands-top.png') top center no-repeat #242c3e;
   }
 }
 
@@ -124,7 +124,7 @@ header .lead {
 }
 
 .characters ul a::before {
-  content: url('images/selector.svg');
+  content: url('images/hand-selector.svg');
   position: absolute;
   transform: translateX(-100%);
   opacity: 0;
@@ -232,7 +232,7 @@ footer a:hover {
 }
 
 #story {
-  background: url('../../assets/images/paper.gif')#232B3A;
+  background: url('images/paper.gif')#232B3A;
   padding-top: 180px;	
 }
 

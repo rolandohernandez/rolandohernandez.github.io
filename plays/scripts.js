@@ -15,7 +15,7 @@
             var dataAudio = this.getAttribute('data-audio');
             if (player.getAttribute('data-playing') != dataAudio) {
                 player.setAttribute('data-playing', dataAudio);
-                player.src = '../assets/audios/' + dataAudio;
+                player.src = 'audios/' + dataAudio;
             }
 
             var activeEl = document.querySelector('.game.is-active');

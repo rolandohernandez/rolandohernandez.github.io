@@ -280,7 +280,7 @@ a {
   position: relative;
   width: 100%;
   max-width: 415px;
-  background-image: url('images/bg-wood.png');
+  background-image: url('images/wood.png');
   background-repeat: repeat;
   background-position: center;
   background-size: 80%;
@@ -342,7 +342,7 @@ a {
 		height: 41px;
 		background-color: black;
 		border-radius: 3px;
-		background-image: url('images/hamburger.svg');
+		background-image: url('images/burger.svg');
 		background-repeat: no-repeat;
 		background-position: center center;
 		outline: none;
