@@ -13,93 +13,200 @@
 </head>
 
 <body>
-    <script type="text/javascript">
-        var awesomeList = function () {
-            var config = {
-                data: [
-                    {
-                        'folder': '2020',
-                        'description': '"I\'ve spent more time in the skies, than on the ground" — Suikoden II',
-                    },
-                    {
-                        'folder': '2021',
-                        'description': '"I tesselate and animate these dancing sprites and sunlit skies for you" — Astro\'s Playroom',
-                    }
-                ],
-                imgUrl: 'covers/{{folder}}/img-{{imgIndex}}.jpg'
-            };
+    <h1>Plays</h1>
+    <p><em>"I've spent more time in the skies, than on the ground." — Futch, Suikoden II</em></p>
 
-            var folderIndex = 0, imgIndex = 1;
+    <ul class="menu">
+        <li class="menu-item is-active" data-collection="#2020">2020</li>
+        <li class="menu-item" data-collection="#2021">2021</li>
+        <li class="menu-item" data-collection="#backlog">Backlog</li>
+    </ul>
+    
+    <ul class="collection is-active" id="2020">
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/suikoden-2.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            var util = {
-                interpolateString: function (str, obj, callback) {
-                    var marker = /{{([a-z][a-z0-9\-_]*)}}/gi;
-                    return str.replace(marker, function (matches) {
-                        return callback(obj, arguments[1]) || '';
-                    });
-                },
-                callback: function (obj, name) {
-                    return name && 'undefined' !== typeof obj[name] ? obj[name] : '';
-                },
-                appendMarkUp: function (elements, parent) {
-                    parent = parent || document.body;
-                    for (var i = 0; i < elements.length; i++) {
-                        var el = elements[i];
-                        if (typeof el == "string")
-                            parent.innerHTML += el;
-                        else
-                            parent.appendChild(el);
-                    }
-                }
-            }
+        <li class="game" data-audio="last-of-us.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/last-of-us.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            function createSection(section) {
-                var h2 = document.createElement('h2'),
-                    p = document.createElement('p'),
-                    ul = document.createElement('ul');
+        <li class="game" data-audio="last-of-us-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/last-of-us-2.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-                h2.innerText = section.folder;
-                p.innerText = section.description;
-                ul.classList.add('collection', 'collection-' + section.folder);
-                util.appendMarkUp([h2, p, ul]);
+        <li class="game" data-audio="tsushima.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/tsushima.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-                nextImg(section.folder);
-            }
+        <li class="game" data-audio="persona-5-royal.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/persona-5-royal.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            function createImg(imgSrc, folder) {
-                var img = document.createElement('img'),
-                    parent = document.querySelector('ul.collection-' + folder);
-                img.src = URL.createObjectURL(imgSrc);
-                util.appendMarkUp([`<li class="game"><figure class="game-art">${img.outerHTML}</figure></li>`], parent);
-            }
+        <li class="game" data-audio="death-stranding.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/death-stranding.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            function nextImg(folder) {
-                fetch(util.interpolateString(config.imgUrl, { folder, imgIndex }, util.callback))
-                    .then(response => {
-                        if (!response.ok) throw new Error();
-                        return response.blob();
-                    })
-                    .then(imgSrc => {
-                        imgIndex++;
-                        createImg(imgSrc, folder);
-                        nextImg(folder);
-                    }).catch(function () {
-                        imgIndex = 1;
-                        folderIndex++;
+        <li class="game" data-audio="kingdom-hearts-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/kingdom-hearts-2.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-                        if (typeof config.data[folderIndex] != "undefined") createSection(config.data[folderIndex]);
-                    });
-            }
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/kingdom-hearts.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            var init = function () {
-                createSection(config.data[folderIndex]);
-            }
+        <li class="game" data-audio="suikoden.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/suikoden.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-            init();
-        };
+        <li class="game" data-audio="assassins-1.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/assassins-1.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
 
-        awesomeList();
-    </script>
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/fallen-order.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/cyberpunk.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/gears-1.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/uncharted-2.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/legend-of-korra.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/vampire-coteries.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/uncharted.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/suikogaiden.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/suikogaiden-2.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="kingdom-hearts.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2020/bright-memory.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+    </ul>
+
+    <ul class="collection" id="2021">
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2021/demons-souls.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2021/journey.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2021/ratchet-and-clank.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/2021/miles-morales.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+    </ul>
+
+    <ul class="collection" id="backlog">
+        <li class="game" data-audio="suikoden-2.mp3">
+            <figure class="game-art">
+                <img src="../assets/images/games/backlog/returnal.jpg">
+                <span class="game-info"></span>
+            </figure>
+        </li>
+    </ul>
+    
+    <audio src="" id="player"></audio>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="../assets/scripts/plays.js"></script>
 </body>
 
 </html>

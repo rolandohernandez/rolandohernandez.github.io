@@ -10,18 +10,43 @@ body {
   padding-bottom: 50px;
 }
 
-h2 {
+h1 {
   font-size: 90px;
-  text-transform: capitalize;
   margin-top: 50px;
   margin-bottom: 30px;
   padding: 0 15px;
 }
 
 @media (max-width: 768px) {
-  h2 {
+  h1 {
     font-size: 45px;
   }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 26px 0 10px 0;
+  list-style: none;
+}
+
+.menu-item {
+  width: 90px;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 0 10px;
+  border-radius: 50px;
+  border: 3px solid white;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+
+.menu-item:hover,
+.menu-item.is-active {
+  opacity: 1;
 }
 
 p {
@@ -31,7 +56,6 @@ p {
   padding: 0 15px;
   line-height: 26px;
   max-width: 650px;
-  font-style: italic;
 }
 
 figure {
@@ -47,7 +71,7 @@ img {
 }
 
 .collection {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000px;
@@ -55,14 +79,15 @@ img {
   margin: 0 auto;
 }
 
+.collection.is-active {
+  display: flex;
+}
+
+
 @media (max-width: 768px) {
   .collection {
     margin-top: 22px;
   }
-}
-
-.collection-backlog .game {
-  filter: grayscale();
 }
 
 .game {
@@ -73,8 +98,8 @@ img {
   justify-content: flex-end;
   width: 250px;
   margin: 3.7% 3.7% 0 3.7%;
+  
 }
-
 
 .game-art img {
   transition: all ease-in-out 300ms;
@@ -94,18 +119,50 @@ img {
   filter: grayscale(100%);
 }
 
+.game-info::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  content: counter(inst);
+  color: white;
+  font-size: 40px;
+}
+
 .game-info {
   cursor: pointer;
   position: relative;
   left: 0;
   right: 0;
+  height: 49px;
+  width: 50px;
   display: inline-block;
   margin: 22px auto 0 auto;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
 }
 
+.game-art:hover .game-info::after {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 35px;
+    border-color: transparent transparent transparent #f2f6ff;
+    content: '';
+}
+
+.game.is-active .game-info::after {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  width: 10px;
+  height: 30px;
+  background-color: #f2f6ff;
+  border: none;
+  content: '';
+}
 
 .game-art:hover .game-info::before  {
   opacity: 0;
@@ -122,4 +179,8 @@ img {
     border: none;
     content: '';
     opacity: 1;
+}
+
+.game.playing .game-info::before {
+  color: gold;
 }
