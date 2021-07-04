@@ -99,13 +99,13 @@ header p {
   text-transform: uppercase;
 }
 
-.menu-item.trucos {
-	background: url('../trucos/images/hands-top.png') top center no-repeat;
+.menu-item.trasfondo {
+	background: url('../trasfondo/images/hands-top.png') top center no-repeat;
   background-color: #242c3e;
   background-size: contain;
   color: #FFE424;
   font-family: 'Insolent';
-  font-size: 30px;
+  font-size: 22px;
   text-transform: uppercase;
 }
 
