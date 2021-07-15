@@ -14,7 +14,7 @@ h1 {
   text-transform: uppercase;
   font-size: 90px;
   margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 0 15px;
 }
 
@@ -192,10 +192,6 @@ img {
     border: none;
     content: '';
     opacity: 1;
-}
-
-.game.playing .game-info::before {
-  color: gold;
 }
 
 footer {
