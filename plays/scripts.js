@@ -1,6 +1,5 @@
 (function () {
     $('.menu-item').on('click', function () {
-        console.log('hi');
         $('.menu-item').removeClass('is-active');
         $(this).addClass('is-active');
         $('.collection').removeClass('is-active');
