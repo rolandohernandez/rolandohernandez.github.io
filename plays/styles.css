@@ -125,8 +125,13 @@ img {
   }
 }
 
-.game.is-active .game-art img {
+.game.is-active .game-art img,
+.game.playing .game-art img {
   filter: grayscale(100%);
+}
+
+.game.playing {
+  pointer-events: none;
 }
 
 .game-info::before {
