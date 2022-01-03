@@ -134,6 +134,10 @@ img {
   pointer-events: none;
 }
 
+.game.playing .game-info {
+  display: none;
+}
+
 .game-info::before {
   position: absolute;
   top: 0;
