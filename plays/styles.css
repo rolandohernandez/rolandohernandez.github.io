@@ -135,7 +135,8 @@ img {
 }
 
 .game.playing .game-info {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .game-info::before {
