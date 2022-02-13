@@ -76,55 +76,22 @@ header .lead {
     margin: 0 auto;
 }
 
-.characters {
-  display: flex;
-  justify-content: center;
+.stories {
+	text-align: center;
   margin-top: 1rem;
+  margin-top: 0;
+  list-style: none;
+  font-weight: normal;
+  font-size: 35px;
+  padding: 0;
+  line-height: 1.8;
 }
 
-  .characters h2 {
-    font-size: 40px;
-    font-family: 'insolentregular', Georgia, serif;
-    margin: 0;
-    color: #FFE424;
-  }
-
-@media (max-width: 650px) {
-  .characters h2 {
-    font-size: 22px;
-  }
-}
-
-.characters .col-1 {
-  margin-right: 5rem;
-}
-
-@media (max-width: 650px) {
-  .characters .col-1 {
-    font-size: 16px;
-	margin-right: 10px;
-  }
-}
-
-.characters ul {
-    margin-top: 0;
-    list-style: none;
-    font-weight: normal;
-    padding: 0;
-    line-height: 1.8;
-}
-
-@media (max-width: 650px) {
-  .characters ul {
-    margin-right: 1rem;
-  }
-}
-
-.characters ul a {
+.stories a {
   position: relative;
 }
 
-.characters ul a::before {
+.stories a::before {
   content: url('images/hand-selector.svg');
   position: absolute;
   transform: translateX(-100%);
@@ -132,17 +99,17 @@ header .lead {
   transition: opacity 200ms ease-in-out;
 }
 
-.characters ul a:hover::before {
+.stories a:hover::before {
   opacity: 1;
 }
 
 @media (max-width: 650px) {
-  .characters ul a:hover::before {
+  .stories a:hover::before {
     opacity: 0;
   }
 }
 
-.characters li.disabled {
+.stories li.disabled {
 	pointer-events: none;
     color: #79A3D8;
     font-style: italic;
