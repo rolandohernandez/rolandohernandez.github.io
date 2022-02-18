@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 800px;
+    min-width: 250px;
+    margin: 2rem auto;
+}
+
+#board div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#board div span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    aspect-ratio: 1;
+    outline: 1px solid gray;
+}
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin: auto auto 2rem;
+}
+
+#keyboard div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+#result button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+button {
+    border: 0;
+    font-size: .75rem;
+    border-radius: 0.4rem;
+    padding: 10px 6px;
+    min-width: 2rem;
+    background-color: lightgray;
+    cursor: pointer;
+    transition: background-color 400ms;
+}
+button:hover {
+    background-color: white;
+    outline: 2px lightgray solid;
+    color: black;
+}
+
+.letter {
+    font-size: 1rem;
+    flex-grow: 1;
+}
+.wide {
+    flex-grow: 2;
+    min-width: 3rem;
+}
+.wide svg {
+    height: 1rem;
+}
+.success {
+    background-color: green;
+    color: white;
+}
+.warning {
+    background-color: gold;
+    color: white;
+}
+.wrong {
+    background-color: gray;
+    color: white;
+    pointer-events: none;
+}
+.hidden {
+    display: none !important;
+}
+
+@media only screen and (max-device-width: 640px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    #board div span {
+        font-size: 2rem;
+    }
+    button {
+        min-width: 1.5rem;
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+    .letter {
+        font-size: 1rem;
+    }
+}
