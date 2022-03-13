@@ -61,6 +61,7 @@ header h1 {
   text-transform: uppercase;
   margin: 0;
   color: #FFE424;
+  line-height: 1.2;
 }
 
 
@@ -74,17 +75,17 @@ header .lead {
     font-weight: bold;
     color: #79A3D8;
     margin: 0 auto;
+	margin: 4px auto 30px auto;
 }
 
 .stories {
 	text-align: center;
-  margin-top: 1rem;
-  margin-top: 0;
-  list-style: none;
-  font-weight: normal;
-  font-size: 35px;
-  padding: 0;
-  line-height: 1.8;
+	margin-top: 1rem;
+	margin-top: 0;
+	list-style: none;
+	font-weight: normal;font-size: 32px;	
+	padding: 0;
+	line-height: 1.8;
 }
 
 .stories a {
@@ -94,6 +95,8 @@ header .lead {
 .stories a::before {
   content: url('images/hand-selector.svg');
   position: absolute;
+  top: 5px;
+  left: -8px;
   transform: translateX(-100%);
   opacity: 0;
   transition: opacity 200ms ease-in-out;
