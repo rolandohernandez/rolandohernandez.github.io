@@ -188,8 +188,6 @@ footer a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
-	top: 0;
 	width: 100%;
 	text-transform: uppercase;
 	background-color:#192031;
