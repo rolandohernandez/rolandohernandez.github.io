@@ -129,15 +129,13 @@ footer a {
   display: inline-flex;
 }
 
-.character.is-active,
-.character:hover {
+.character.is-active {
   transform: scale(1.05);
   box-shadow: 0px 4px 4px rgb(0 0 0 / 20%);
   z-index: 100;
 }
 
-.character.active .character-image,
-.character:hover  .character-image {
+.character.active .character-image {
   filter: grayscale(0);
   outline: #8ca685 solid 4px;
   -webkit-animation: flash 300ms linear;
@@ -164,8 +162,7 @@ footer a {
   margin: 0;
 }
 
-.character.active .character-name,
-.character:hover .character-name {
+.character.active .character-name {
   display: block;
   width: 100%;
   background-color: rgb(0, 0, 0, 0.70);
