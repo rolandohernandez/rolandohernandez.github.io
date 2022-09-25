@@ -16,6 +16,7 @@ body {
   text-align: center;
   background-color: #1a2c40;
   background-image: url(images/bg2.png);
+  background-size: cover;
   font-family: 'Helvetica Neue LT Std';
   font-size: 16px;
   color: white;
