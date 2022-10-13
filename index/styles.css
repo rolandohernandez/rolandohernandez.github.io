@@ -1,8 +1,18 @@
 @font-face {
 	font-family: 'Insolent';
-	src: url('../fonts/insolent-webfont.woff2') format('woff2'), url('../fonts/insolent-webfont.woff') format('woff');
+	src: url('../fonts/insolent-webfont.woff2') format('woff2'), 
+  url('../fonts/insolent-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue LT Std';
+  src: url('../fonts/HelveticaNeueLTStd-UltLt.woff2') format('woff2'),
+  url('../fonts/HelveticaNeueLTStd-UltLt.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
@@ -24,7 +34,7 @@ body {
   line-height: 1.5;
   color:#f2f6ff;
   background-color: #001937;
-  background: url('../index/images/rain.gif') center center, linear-gradient(to right, #536976, #292e49);
+  background: url(../index/images/rain.gif) center center, linear-gradient(to right, #536976, #000000);
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
@@ -53,13 +63,11 @@ h1, h2 {
 
 header {
   text-align: center;
-  margin-bottom: 15px;
 }
 
 h1 {
 	font-family: 'Insolent';
   font-size: 68px;
-  margin-bottom: 25px;
 }
 
 @media (max-width: 600px) {
@@ -70,7 +78,7 @@ h1 {
 }
 
 header p {
-    margin: 5px 0 0 0;
+    margin: 60px 0;
     font-style: italic;
     font-size: 13px;
 }
@@ -81,7 +89,6 @@ header p {
   flex-wrap: wrap;
   margin-top: 0;
   padding: 0;
-  max-width: 700px;
   list-style: none;
 }
 
@@ -89,15 +96,22 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin: 0 15px;
   width: 200px;
   height: 100px;
   background-color: rgb(251, 251, 251);
   color: #000;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 15px;
   box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
-  text-transform: uppercase;
+  transition: all ease-in-out 300ms;
+}
+
+@media (min-width: 768px) {
+  .menu-item:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -5px) scale(1);
+  }
 }
 
 .menu-item.disabled {
@@ -131,4 +145,38 @@ header p {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu-item.favorites {
+  position: relative;
+  padding-top: 18px;
+  background: linear-gradient(172deg, rgba(255,253,230,1) 0%, rgba(226,224,213,1) 100%);
+  color:#070601;
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 20px;
+}
+
+.menu-item.favorites::before {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  left: auto;
+  right: auto;
+  background-image: url(../the-favorites/images/castle.png);
+  background-size: cover;
+  background-position: center center;
+}
+
+.menu-item.grainy {
+  background-image: url(../the-grainy-textured/images/index.png);
+  background-size: cover;
+  color: white;
+  font-family: 'Helvetica Neue LT Std';
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 10px;
 }
