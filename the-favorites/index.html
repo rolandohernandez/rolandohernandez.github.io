@@ -32,8 +32,16 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+<script>
+    // Player
+        function music() {
+        var music = new Audio('audio.mp3');
+        music.play();
+    }
+</script>
+
 <body class="animate__animated fade animate__fadeIn animate__delay-1s">
-    <img class="heading-logo game" data-audio="audio.mp3" src="images/castle.png">
+    <img class="heading-logo game" value="sound" onclick="music()" src="images/castle.png">
     <h1 class="heading">The Favorites</h1>
     <img class="divider" src="images/divider.png">
 
