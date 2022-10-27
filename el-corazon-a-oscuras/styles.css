@@ -1,0 +1,404 @@
+/* Fonts */
+
+@font-face {
+	font-family: 'insolentregular';
+	src: url('../fonts/insolent-webfont.woff2') format('woff2'), url('../fonts/insolent-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Globals */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: 'PT Sans Narrow', Georgia, serif;
+	font-size: 19px;
+	background-image: url('images/paper.gif');
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Index */
+
+#index {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color: white;
+	background: url('images/hands-top.png') top center no-repeat, url('images/hands-left.png') left 290px no-repeat #242c3e;
+}
+
+@media (max-width: 650px) {
+  #index {
+	  background: url('images/hands-top.png') top center no-repeat #242c3e;
+  }
+}
+
+.index-container {
+	padding: 0 35px;
+	margin: 0 auto;
+}
+
+.story-item {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	max-width: 550px;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0 auto;
+	color: #79A3D8;
+	font-family: 'insolentregular', Georgia, serif;
+}
+
+.story-item:hover {
+	color: #FFE424;
+}
+
+.story-item span {
+	display: block;
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+	font-family: 'PT Sans Narrow', Georgia, serif;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+	font-size: 120px;
+	font-family: 'insolentregular', Georgia, serif;
+	text-transform: uppercase;
+	margin: 0;
+	color: #FFE424;
+	line-height: 1.2;
+}
+
+@media (max-width: 650px) {
+	header h1 {
+		font-size: 40px;
+	}
+}
+
+header .lead {
+	font-size: 22px;
+    font-weight: bold;
+    color: #79A3D8;
+	margin: 3px auto 30px auto;
+}
+
+.stories {
+	text-align: center;
+	margin-top: 1rem;
+	margin-top: 0;
+	list-style: none;
+	font-weight: normal;
+	padding: 0;
+}
+
+.story-item {
+	position: relative;
+}
+
+.story-item::before {
+	content: url('images/hand-selector.svg');
+	position: absolute;
+	top: 25px;
+    left: 8px;
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+	pointer-events: none;
+}
+
+.story-item:hover::before {
+	opacity: 1;
+}
+
+@media (max-width: 650px) {
+  .stories a:hover::before {
+    opacity: 0;
+  }
+}
+
+.stories li {
+	max-width: 300px;
+	margin: 0 auto;
+	border: 1px solid white;
+	padding: 20px;
+}
+
+.stories li h3 {
+	margin: 0;
+}
+
+.stories li p {
+	margin: 0;
+}
+
+.stories li.disabled {
+	pointer-events: none;
+    color: #79A3D8;
+    font-style: italic;
+}
+
+.story-img-1 {
+	display: block;
+    margin: 25px auto;
+	max-width: 200px;
+}
+
+footer {
+	text-align: center;
+}
+
+@media (max-width: 650px) {
+  footer {
+    font-size: 16px;
+  }
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+}
+
+footer a:hover {
+	 color: #FFE424;
+	 border-bottom: 1px dotted #FFE424;	
+}
+
+/* Stories */
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	text-transform: uppercase;
+	background-color:#192031;
+	color: white;
+	padding: 25px;
+}
+
+.nav-bar .back-btn:hover .btn {
+	color: white;
+}
+
+@media (max-width: 650px) {
+	.nav-bar .text {
+		display: none;
+	}
+}
+
+.nav-bar .back {
+	position: relative;
+    color: #79A3D8;
+    padding-right: 1rem;
+    font-size: 2rem;
+	top: 2px;
+}
+
+.nav-bar {
+    float: right;
+    padding-right: 25px;
+    text-align: right;	
+}
+
+.nav-bar h1 {
+	margin: 0;
+	font-family: 'insolentregular', Georgia, serif;
+	font-size: 35px;
+	color: #FFE424;	
+}
+
+@media (max-width: 650px) {
+	.nav-bar h1 {
+		font-size: 20px;
+	}
+}
+
+.nav-bar .byline {
+    margin: 0;
+    color: #79A3D8;	
+}
+
+@media (max-width: 650px) {
+	.nav-bar h1 {
+		font-size: 14px;
+	}
+}
+
+#story .page {
+    display: none;
+	text-align: center;
+}
+
+#story p {
+	text-align: left;
+}
+
+#story .option {
+	border: 2px solid black;
+	border-radius: 20px;
+	font-size: 20px;
+	font-family: inherit;
+	padding: 15px 20px;
+    background: transparent;
+    cursor: pointer;
+	margin-top: 15px;
+}
+
+#story .option + .option {
+	margin-left: 20px;
+}
+
+/* Story */
+
+.story-container {
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 900px;
+	font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
+}
+
+.story-container h2 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2em;
+    line-height: 1.6;	
+	margin: 0;
+}
+
+@media (max-width: 650px) {
+	.story-container h2 {
+		font-size: 1.5em;
+	}
+}
+
+.story-container p {
+	margin-top: 7px;
+	margin-bottom: 0;
+	line-height: 1.8;
+	text-indent: 3em;
+}
+
+@media (max-width: 650px) {
+	.story-container p {
+		font-size: 16px;
+	}
+}
+
+.story-container p:nth-child(2) {
+	text-indent: 0;
+}
+
+/* Animations */
+
+.animated {
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+	  opacity: 0
+  }
+  to {
+	  opacity: 1
+	}
+}
+
+@keyframes fadeIn {
+  from {
+	  opacity: 0
+  }
+  to {
+	  opacity: 1
+	}
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
+
+@keyframes swing {
+	20% {
+		opacity: 0;
+	  transform: rotate3d(0, 0, 1, 15deg) translate3d(0, -80%, 0);
+	}
+  
+	40% {
+		opacity: 1;
+	  transform: rotate3d(0, 0, 1, -10deg) translate3d(0, -50%, 0);
+	}
+  
+	60% {
+		opacity: 1;
+	  transform: rotate3d(0, 0, 1, 5deg) translate3d(0, -20%, 0);
+	}
+  
+	80% {
+		opacity: 1;
+	  transform: rotate3d(0, 0, 1, -5deg) translate3d(0, -10%, 0);
+	}
+  
+	to {
+		opacity: 1;
+	  transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
+	}
+  }
+
+.animate__swing {
+	opacity: 0;
+	transform: translate3d(0, -80%, 0);
+	animation-duration: 5s;
+}
