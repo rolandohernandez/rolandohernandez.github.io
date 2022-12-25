@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Trasfondo</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Sans+Narrow:wght@400;700&display=swap"
+	rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="story" class="animated fadeIn">
+	<div class="nav-bar animated fadeInDown"><a href="index.html" class="back-btn"><span class="back">«</span><span class="text">Volver al indice</span></a>
+		<div class="logo">
+			<h1>Trasfondo</h1>
+			<p class="byline">Por Rolando Hernández</p>
+		</div>
+	</div>
+
+	<article class="story-container">
+		<h2>Libros de magia</h2>
+
+		<div id="story-content">
+			<div id="page-1" class="page">
+				<img class="story-img-1" src="images/libros.jpg" alt="Libros">
+				<p>
+					Enfundado en una gruesa túnica verde oscura y haciendo un esfuerzo por cargar una torre de doce libros entre sus brazos, Félix sube por una empinada calle de piedra iluminada por la luz difusa de las farolas. Es una noche de invierno en «La ciudad que sueña», y la residencia del profesor Aragosa nunca había parecido tan lejana…
+					<br><br>
+					Blablabla, llega a un cruce de caminos:
+				</p>
+
+				<button class="option" path="page-2">Calle Azalea</button>
+				<button class="option" path="page-3">Calle Magnolia</button>
+			</div>
+
+			<div id="page-2" class="page">
+				<p>
+					Calle Azalea
+				</p>
+			</div>
+
+			<div id="page-3" class="page">
+				<p>
+					Calle Magnolia
+				</p>
+			</div>
+		</div>
+	</article>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+	<script>
+		jQuery('#story-content').story();
+	</script>
+
+</body>
+
+</html>
