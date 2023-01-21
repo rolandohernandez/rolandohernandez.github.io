@@ -22,6 +22,7 @@ h1 {
   display: inline-block;
   text-transform: lowercase;
   font-size: 90px;
+  font-weight: normal;
   margin-top: 50px;
   margin-bottom: 10px;
   padding: 0 15px;
@@ -31,6 +32,12 @@ h1 {
   h1 {
     font-size: 45px;
   }
+}
+
+.divider {
+  width: 140px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .menu {
@@ -141,19 +148,10 @@ img {
   }
 }
 
-.game.is-active .game-art img,
-.game.playing .game-art img {
+.game.is-active .game-art img {
   filter: grayscale(100%);
 }
 
-.game.playing {
-  pointer-events: none;
-}
-
-.game.playing .game-info {
-  opacity: 0;
-  pointer-events: none;
-}
 
 .game-info::before {
   position: absolute;
@@ -184,7 +182,7 @@ img {
     height: 0;
     border-style: solid;
     border-width: 20px 0 20px 35px;
-    border-color: transparent transparent transparent #f2f6ff;
+    border-color: transparent transparent transparent #333;
     content: '';
 }
 
