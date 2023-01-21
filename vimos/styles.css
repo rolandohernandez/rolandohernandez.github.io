@@ -1,32 +1,54 @@
+@font-face {
+  font-family: 'Monoton';
+  src: url('fonts/Monoton-Regular.woff2') format('woff2'),
+      url('fonts/Monoton-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crete Round';
+  src: url('fonts/CreteRound-Italic.woff2') format('woff2'),
+      url('fonts/CreteRound-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crete Round';
+  src: url('fonts/CreteRound-Regular.woff2') format('woff2'),
+      url('fonts/CreteRound-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body {
+  font-family: 'Courier';
   text-align: center;
-  background-color: rgb(232, 232, 232);
-  font-family: 'Reenie Beanie', sans-serif;
+  background-image: url(FINAL.jpg);
+  background-size: cover;
+  color: rgb(213, 213, 213);
   font-size: 16px;
-  color:#000000;
-  background-attachment: fixed;
-  padding-bottom: 50px;
+  padding: 70px 0;
 }
 
-.heading {
-  position: relative;
-  display: inline-block;
+h1 {
   line-height: 1;
-  font-size: 60px;
-  font-weight: bold;
-  margin-top: 50px;
-  margin-bottom: 0;
-  padding: 0 15px;
+  font-family: 'Monoton';
+  font-weight: normal;
+  font-size: 90px;
+  margin: 0;
 }
 
-.subheading {
-  font-size: 25px;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 45px;
-  }
+h4 {
+  line-height: 1;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 15px 0 80px 0;
 }
 
 .menu {
@@ -72,146 +94,6 @@ img {
   display: block;
   max-width: 100%;
   width: 100%;
-  height: 352px;
-}
-
-.collection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 0;
-  max-width: 1000px;
-  padding: 0;
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
-  overflow: hidden;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.collection.is-active {
-  height: auto;
-  opacity: 1;
-  overflow: visible;
-  visibility: visible;
-  pointer-events: visible;
-}
-
-@media (max-width: 768px) {
-  .collection {
-    margin-top: 22px;
-  }
-}
-
-.collection#backlog .game-info {
-  display: none;
-}
-
-.collection#backlog .game {
-  pointer-events: none;
-}
-
-.game {
-  position: relative;
-  counter-increment: inst;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 250px;
-  margin: 3.7% 3.7% 0 3.7%;
-  width: 264px;
-  margin: 3.7% 3.4% 0 3.4%;
-}
-
-.game-art img {
-  transition: all ease-in-out 300ms;
-  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .game.is-active .game-art img,
-  .game-art img:hover {
-    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
-    transform: translate(0px, -10px) scale(1);
-  }
-}
-
-.game.is-active .game-art img,
-.game.playing .game-art img {
-  filter: grayscale(100%);
-}
-
-.game.playing {
-  pointer-events: none;
-}
-
-.game.playing .game-info {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.game-info::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-weight: bold;
-  content: counter(inst);
-  color: white;
-  font-size: 40px;
-}
-
-.game-info {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  right: 0;
-  height: 49px;
-  width: 50px;
-  display: inline-block;
-  margin: 22px auto 0 auto;
-}
-
-.game-art:hover .game-info::after {
-    position: absolute;
-    top: 5px;
-    left: 11px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 0 20px 35px;
-    border-color: transparent transparent transparent #f2f6ff;
-    content: '';
-}
-
-.game.is-active .game-info::after {
-  position: absolute;
-  top: 10px;
-  left: 11px;
-  width: 10px;
-  height: 30px;
-  background-color: #f2f6ff;
-  border: none;
-  content: '';
-}
-
-.game-art:hover .game-info::before  {
-  opacity: 0;
-}
-
-.game.is-active .game-info::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: 11px;
-  left: initial;
-  width: 10px;
-  height: 30px;
-  background-color: #f2f6ff;
-  border: none;
-  opacity: 1;
 }
 
 footer {
@@ -231,13 +113,66 @@ footer a {
   text-indent: -9999px;
 }
 
-.card {
-  max-width: 400px;
-  height: 500px;
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
   margin: 0 auto;
-  background-color: white;
 }
 
-.card-title {
-  font-size: 40px;
+.movie {
+  transform: rotate(-1deg);
+  transition: transform 300ms ease-in-out;
+}
+
+.movie:nth-child(odd) {
+  transform: rotate(1deg);
+}
+
+.movie-poster {
+  width: 300px;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgb(213, 213, 213);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 20%);
+  filter: saturate(70%) contrast(85%);
+  margin: 0 20px;
+}
+
+.movie-poster img {
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.movie-poster:before, .movie-poster:after {
+  content: '';
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.movie-poster:before {
+  height: 4%;
+  bottom: -4%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(177deg, rgba(0,0,0,0.22) 10%, transparent 50%), linear-gradient(-177deg, rgba(0,0,0,0.22) 10%, transparent 50%);
+  background-size: 49% 100%;
+  background-position: 2% 0, 98% 0;
+}
+
+.movie-poster:after {
+  height: 100%;
+  top: 0;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.1) 0.5%, rgba(0,0,0,0.15) 1.2%, transparent 1.2%), linear-gradient(to bottom, rgba(255,255,255,0.1) 0.5%, rgba(0,0,0,0.15) 1.2%, transparent 1.2%), linear-gradient(to bottom, rgba(255,255,255,0.1) 0.5%, rgba(0,0,0,0.15) 1.2%, transparent 1.2%), linear-gradient(265deg, rgba(0,0,0,0.2), transparent 10%), linear-gradient(5deg, rgba(0,0,0,0.2), transparent 15%), linear-gradient(-5deg, rgba(0,0,0,0.1), transparent 10%), linear-gradient(5deg, rgba(0,0,0,0.1), transparent 10%), linear-gradient(-265deg, rgba(0,0,0,0.2), transparent 10%), linear-gradient(-5deg, rgba(0,0,0,0.2), transparent 15%), linear-gradient(266deg, rgba(0,0,0,0.2), transparent 10%);
+  background-size: 50% 100%, 100% 33.3333%, 100% 33.3333%, 50% 33.3333%, 50% 33.3333%, 50% 33.3333%, 50% 33.3333%, 50% 33.3333%, 50% 33.3333%, 50% 33.3333%;
+  background-position: right top, left center, left bottom, left top, left top, right top, left center, right center, right center, left bottom;
+}
+
+.movie-date {
+  font-size: 16px;
+  margin: 20px 0 60px 0;
 }
