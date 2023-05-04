@@ -98,6 +98,7 @@ footer a {
 .movie {
   transform: rotate(-1deg);
   transition: transform 300ms ease-in-out;
+  margin-bottom: 50px;
 }
 
 .movie:nth-child(odd) {
@@ -150,4 +151,5 @@ footer a {
 .movie-date {
   font-size: 16px;
   margin: 20px 0 60px 0;
+  display: none;
 }
